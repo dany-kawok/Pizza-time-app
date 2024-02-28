@@ -25,11 +25,17 @@ function Carousel({ autoSlide = false, autoSlideInterval = 2000 }) {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {images.map((img) => {
-            return <img src={img.url} key={img.id}></img>;
+            return (
+              <img
+                src={img.url}
+                key={img.id}
+                className="pointer-events-none"
+              ></img>
+            );
           })}
         </div>
       </div>
-      <div className="absolute w-[100%] h-[100%] flex justify-between items-center ">
+      <div className="absolute w-[100%] h-[100%] hidden md:flex justify-between items-center">
         <button>
           <ChevronLeft
             size={200}
@@ -40,6 +46,22 @@ function Carousel({ autoSlide = false, autoSlideInterval = 2000 }) {
         <button>
           <ChevronRight
             size={200}
+            className="text-white"
+            onClick={next}
+          ></ChevronRight>
+        </button>
+      </div>
+      <div className="absolute w-[100%] bottom-[50%] flex md:hidden justify-between items-end">
+        <button>
+          <ChevronLeft
+            size={40}
+            className="text-white"
+            onClick={prev}
+          ></ChevronLeft>
+        </button>
+        <button>
+          <ChevronRight
+            size={40}
             className="text-white"
             onClick={next}
           ></ChevronRight>
