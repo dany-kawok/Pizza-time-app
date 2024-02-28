@@ -1,5 +1,5 @@
 [
-  { "id": 1, "url": "./public/assets/images/featured.webp" },
-  { "id": 2, "url": "./public/assets/images/featured2.webp" },
-  { "id": 3, "url": "./public/assets/images/featured3.webp" }
+  { "id": 1, "url": "./assets/images/featured.webp" },
+  { "id": 2, "url": "./assets/images/featured2.webp" },
+  { "id": 3, "url": "./assets/images/featured3.webp" }
 ]
