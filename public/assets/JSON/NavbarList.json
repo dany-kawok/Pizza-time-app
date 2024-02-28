@@ -1,0 +1,8 @@
+[
+  { "id": 1, "title": "Homepage", "link": "/" },
+  { "id": 2, "title": "Products", "link": "/products" },
+  { "id": 3, "title": "Menu", "link": "/menu" },
+  { "id": 4, "title": "Events", "link": "/events" },
+  { "id": 5, "title": "Blog", "link": "/blog" },
+  { "id": 6, "title": "Contact", "link": "/contact" }
+]
