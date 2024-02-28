@@ -6,7 +6,7 @@ export default function App() {
     <div className="bg-orange-700 w-[100dwh] h-[100dvh] flex flex-col items-center">
       <Header />
 
-      <Carousel />
+      <Carousel autoSlide={false} />
     </div>
   );
 }
