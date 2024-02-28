@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneFlip } from "@fortawesome/free-solid-svg-icons";
 import { faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
 import links from "../../public/assets/JSON/NavbarList.json";
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <div className="  w-[100%] h-[15dvh]  flex items-center gap-6 p-11">
@@ -23,7 +24,9 @@ function Header() {
             />
           </li>
           {links.map((el, i) => (
-            <li key={i}>{el.title}</li>
+            <Link key={i} to={el.link}>
+              <li>{el.title}</li>
+            </Link>
           ))}
         </ul>
       }

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import images from "../../public/assets/JSON/Images.json";
 import { ChevronLeft, ChevronRight } from "lucide-react";
