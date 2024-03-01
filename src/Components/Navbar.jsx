@@ -25,15 +25,15 @@ function Navbar() {
         <div className="md:hidden">
           <button onClick={toggleNavbar}>
             {isOpen ? (
-              <X className="text-white" size={50} />
+              <X className="text-white " size={50} />
             ) : (
-              <Menu className="text-white" size={50} />
+              <Menu className="text-white " size={50} />
             )}
           </button>
         </div>
       </div>
       {isOpen && (
-        <div className=" flex flex-col list-none items-center basis-full font-bold text-white">
+        <div className=" flex flex-col list-none md:hidden items-center basis-full font-bold text-white">
           <Navlinks />
         </div>
       )}
