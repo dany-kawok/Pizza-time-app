@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import images from "../../public/assets/JSON/Images.json";
+import images from "../../../public/assets/JSON/Images.json";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 function Carousel({ autoSlide = false, autoSlideInterval = 2000 }) {
   const [currentSlide, setCurrentSlide] = useState(0);

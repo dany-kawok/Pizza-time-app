@@ -1,7 +1,7 @@
 import { register } from "swiper/element/bundle";
-import images from "../../public/assets/JSON/Images.json";
-import "../../node_modules/swiper/swiper.min.css";
-import "../../node_modules/swiper/swiper-bundle.min.css";
+import images from "../../../public/assets/JSON/Images.json";
+import "../../../node_modules/swiper/swiper.min.css";
+import "../../../node_modules/swiper/swiper-bundle.min.css";
 import { useEffect, useRef } from "react";
 
 register();

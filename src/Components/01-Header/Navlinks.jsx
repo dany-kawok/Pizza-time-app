@@ -1,4 +1,4 @@
-import links from "../../public/assets/JSON/NavbarList.json";
+import links from "../../../public/assets/JSON/NavbarList.json";
 import { Link } from "react-router-dom";
 function Navlinks() {
   return (

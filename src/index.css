@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 80dvw;
+  margin: auto;
+
+  background-color: aqua;
+}
+.footer-locations ul,
+.footer-working-hours ul {
+  margin-top: 10px;
+  color: #dedede;
+}
