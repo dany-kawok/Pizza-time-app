@@ -1,3 +1,5 @@
+import PizzaList from "./PizzaComponents/PizzaList";
+
 function Body() {
   return (
     <div className=" h-[86dvh] bg-white">
@@ -8,11 +10,12 @@ function Body() {
         <h1 className="text-3xl font-bold text-center">
           THE BEST PIZZA IN TOWN
         </h1>
-        <p className="text-3xl">
+        <p className="text-2xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit
           arcu in pretium molestie. Interdum et malesuada fames acme. Lorem
           ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
+        <PizzaList />
       </div>
     </div>
   );

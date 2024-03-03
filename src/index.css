@@ -9,11 +9,14 @@
 .container {
   width: 80dvw;
   margin: auto;
-
-  background-color: aqua;
 }
 .footer-locations ul,
 .footer-working-hours ul {
   margin-top: 10px;
   color: #dedede;
+}
+.pizza-card {
+  height: 250px;
+  width: 250px;
+  /* margin: auto; */
 }
