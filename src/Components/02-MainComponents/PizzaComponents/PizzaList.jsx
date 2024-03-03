@@ -9,9 +9,15 @@ function PizzaList() {
     dispatch({ type: "get" });
   }, [dispatch]);
 
-  console.log("PIZAAAAAAAA LIST : " + pizzaList);
+  console.log(pizzaList.length);
 
-  return <div className="flex justify-center items-center  mt-[40px]"></div>;
+  return (
+    <div className="flex justify-center items-center  mt-[40px]">
+      {pizzaList.map((el, i) => {
+        return <PizzaItem key={i} item={el} />;
+      })}
+    </div>
+  );
 }
 
 export default PizzaList;
