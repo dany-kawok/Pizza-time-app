@@ -7,12 +7,16 @@ import MenuList from "./Pages/Menu";
 import ContactPage from "./Pages/Contact";
 import Main from "./Pages/Main";
 import PizzaProvider from "./Contexts/PizzaContext";
+import PizzaOrder from "./Components/02-MainComponents/PizzaComponents/PizzaOrder";
+import Footer from "../src/Components/03-Footer/Footer";
+
 export default function App() {
   return (
     <div className="App">
       <PizzaProvider>
         <header className="bg-orange-700 ">
           <Header />
+
           {/* ROUTES SECTION */}
           <Routes>
             <Route index element={<Main />} />
@@ -21,9 +25,11 @@ export default function App() {
             <Route path="/menu" element={<MenuList />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/products/:pizzaId" element={<Products />} />
           </Routes>
           {/* END OF ROUTES SECTION */}
         </header>
+        <Footer />
       </PizzaProvider>
     </div>
   );

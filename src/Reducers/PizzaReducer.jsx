@@ -1,17 +1,11 @@
-export default function reducer(currentPizzas, action) {
+export default function reducer(state, action) {
   switch (action.type) {
-    case "get": {
-      const request = new XMLHttpRequest();
-      request.open(
-        "GET",
-        "https://food-delivery-app-two-delta.vercel.app/api/products",
-        false
-      );
-      request.send(null);
-      if (request.status !== 200) {
-        return;
-      }
-      return JSON.parse(request.responseText);
-    }
+    case "FETCH_SUCCESS":
+      return { loading: false, error: "", data: action.payLoad };
+
+    case "FETCH_ERROR":
+      return { loading: false, error: "Something went wrong", post: {} };
+    default:
+      return { loading: true, error: "", data: {} };
   }
 }

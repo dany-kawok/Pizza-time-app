@@ -1,23 +1,44 @@
 import { useEffect } from "react";
 import PizzaItem from "./PizzaItem";
 import { usePizzas, usePizzasDispatch } from "../../../Contexts/PizzaContext";
+import axios from "axios";
+import "react-loading-skeleton/dist/skeleton.css";
+import PizzaSkeleton from "./PizzaSkeleton";
 
 function PizzaList() {
   const pizzaList = usePizzas();
   const dispatch = usePizzasDispatch();
+
   useEffect(() => {
-    dispatch({ type: "get" });
+    const getPizzas = () => {
+      axios
+        .get(import.meta.env.VITE_API_BASE_URL)
+        .then((response) => {
+          dispatch({ type: "FETCH_SUCCESS", payLoad: response });
+        })
+        .catch(() => {
+          dispatch({ type: "FETCH_ERROR" });
+        });
+    };
+    getPizzas();
   }, [dispatch]);
-
-  console.log(pizzaList.length);
-
-  return (
-    <div className="flex justify-center items-center  mt-[40px]">
-      {pizzaList.map((el, i) => {
-        return <PizzaItem key={i} item={el} />;
-      })}
-    </div>
-  );
+  if (pizzaList && pizzaList.loading) {
+    return (
+      <div className="flex justify-center items-center gap-16">
+        <PizzaSkeleton />
+        <PizzaSkeleton />
+      </div>
+    );
+  }
+  if (pizzaList) {
+    console.log(pizzaList);
+    return (
+      <div className="flex justify-center items-center  mt-[40px]">
+        {pizzaList &&
+          pizzaList.data.data.map((el, i) => <PizzaItem key={i} item={el} />)}
+      </div>
+    );
+  }
 }
 
 export default PizzaList;

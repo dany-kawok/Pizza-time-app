@@ -1,4 +1,3 @@
-import Footer from "../Components/03-Footer/Footer";
 import { Slider } from "../Components/02-MainComponents/Slider";
 import Body from "../Components/02-MainComponents/Body";
 
@@ -7,7 +6,6 @@ function Main() {
     <div>
       <Slider />
       <Body />
-      <Footer />
     </div>
   );
 }
