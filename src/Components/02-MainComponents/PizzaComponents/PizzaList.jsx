@@ -30,6 +30,7 @@ function PizzaList() {
       </div>
     );
   }
+
   if (pizzaList) {
     console.log(pizzaList);
     return (

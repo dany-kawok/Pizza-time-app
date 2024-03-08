@@ -1,40 +1,23 @@
 import { useParams } from "react-router-dom";
-import { usePizzas, usePizzasDispatch } from "../Contexts/PizzaContext";
-import { useEffect } from "react";
-import axios from "axios";
-import PizzaSkeleton2 from "../Components/02-MainComponents/PizzaComponents/PizzaSkeleton2";
+import { usePizzas } from "../Contexts/PizzaContext";
 import PizzaOrder from "../Components/02-MainComponents/PizzaComponents/PizzaOrder";
 function Products() {
   const { pizzaId } = useParams();
   const pizzaObject = usePizzas();
-  const dispatch = usePizzasDispatch();
-
-  useEffect(() => {
-    const getPizzas = () => {
-      axios
-        .get(import.meta.env.VITE_API_BASE_URL + `/${pizzaId}`)
-        .then((response) => {
-          dispatch({ type: "FETCH_SUCCESS", payLoad: response });
-        })
-        .catch(() => {
-          dispatch({ type: "FETCH_ERROR" });
-        });
-    };
-    getPizzas();
-  }, [dispatch, pizzaId]);
-  // console.log(pizzaObject.data.data);
-  if (pizzaObject.loading) {
-    console.log(pizzaObject.loading);
+  const renderedItem = pizzaObject.data.data.filter((el) => el._id == pizzaId);
+  console.log(renderedItem);
+  if (pizzaId) {
     return (
       <div>
-        <PizzaSkeleton2 />
+        <PizzaOrder item={renderedItem[0]} />
       </div>
     );
-  }
-  if (pizzaObject.data.data) {
+  } else {
     return (
-      <div>
-        <PizzaOrder item={pizzaObject.data.data} />
+      <div className="flex  justify-center items-center h-[50%] md:h-[85dvh] ">
+        <h1 className="text-xl sm:text-7xl  font-bold  text-white ">
+          Products Page
+        </h1>
       </div>
     );
   }
