@@ -7,7 +7,7 @@ import MenuList from "./Pages/Menu";
 import ContactPage from "./Pages/Contact";
 import Main from "./Pages/Main";
 import PizzaProvider from "./Contexts/PizzaContext";
-import PizzaOrder from "./Components/02-MainComponents/PizzaComponents/PizzaOrder";
+// import PizzaOrder from "./Components/02-MainComponents/PizzaComponents/PizzaOrder";
 import Footer from "../src/Components/03-Footer/Footer";
 
 export default function App() {

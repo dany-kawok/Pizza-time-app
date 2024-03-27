@@ -6,7 +6,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import PizzaSkeleton from "./PizzaSkeleton";
 
 function PizzaList() {
-  const pizzaList = usePizzas();
+  const pizzaListArr = usePizzas();
   const dispatch = usePizzasDispatch();
 
   useEffect(() => {
@@ -22,7 +22,8 @@ function PizzaList() {
     };
     getPizzas();
   }, [dispatch]);
-  if (pizzaList && pizzaList.loading) {
+  console.log("dada");
+  if (pizzaListArr && pizzaListArr.loading) {
     return (
       <div className="flex justify-center items-center gap-16">
         <PizzaSkeleton />
@@ -31,12 +32,14 @@ function PizzaList() {
     );
   }
 
-  if (pizzaList) {
-    console.log(pizzaList);
+  if (pizzaListArr) {
+    console.log(pizzaListArr);
     return (
       <div className="flex justify-center items-center  mt-[40px]">
-        {pizzaList &&
-          pizzaList.data.data.map((el, i) => <PizzaItem key={i} item={el} />)}
+        {pizzaListArr &&
+          pizzaListArr.data.data.map((el, i) => (
+            <PizzaItem key={i} item={el} />
+          ))}
       </div>
     );
   }
