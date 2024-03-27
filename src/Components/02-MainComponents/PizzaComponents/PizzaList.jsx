@@ -22,7 +22,7 @@ function PizzaList() {
     };
     getPizzas();
   }, [dispatch]);
-  console.log("dada");
+  // console.log("dada");
   if (pizzaListArr && pizzaListArr.loading) {
     return (
       <div className="flex justify-center items-center gap-16">
